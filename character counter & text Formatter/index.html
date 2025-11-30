@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Formatter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="banner">
+    <h1>📝 Text Formatter Tool</h1>
+    <p>Type your text and apply formatting instantly.</p>
+  </section>
+
+  <!-- MAIN TOOL SECTION -->
+  <section class="tool-container">
+
+    <!-- LEFT PANEL -->
+    <div class="input-area">
+      <h2>Your Text</h2>
+      <textarea id="textInput" placeholder="Start typing something..."></textarea>
+      <p class="count">Characters: <span id="charCount">0</span></p>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="format-controls">
+      <h2>Format Tools</h2>
+
+      <button onclick="toUppercase()">UPPERCASE</button>
+      <button onclick="toLowercase()">lowercase</button>
+      <button onclick="toCapitalized()">Capitalize Words</button>
+      <button onclick="removeSpaces()">Remove Extra Spaces</button>
+      <button class="clear-btn" onclick="clearText()">Clear Text</button>
+    </div>
+
+  </section>
+
+  <script>
+    const input = document.getElementById("textInput");
+    const counter = document.getElementById("charCount");
+
+    input.addEventListener("input", () => {
+      counter.textContent = input.value.length;
+    });
+
+    function toUppercase() {
+      input.value = input.value.toUpperCase();
+      counter.textContent = input.value.length;
+    }
+
+    function toLowercase() {
+      input.value = input.value.toLowerCase();
+      counter.textContent = input.value.length;
+    }
+
+    function toCapitalized() {
+      input.value = input.value
+        .toLowerCase()
+        .replace(/\b\w/g, char => char.toUpperCase());
+      counter.textContent = input.value.length;
+    }
+
+    function removeSpaces() {
+      input.value = input.value.replace(/\s+/g, " ").trim();
+      counter.textContent = input.value.length;
+    }
+
+    function clearText() {
+      input.value = "";
+      counter.textContent = 0;
+    }
+  </script>
+</body>
+</html>

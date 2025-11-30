@@ -1,0 +1,125 @@
+/* GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #597bc9;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER SECTION */
+.banner {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.banner h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #2a3b66;
+}
+
+.banner p {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+/* MAIN LAYOUT */
+.tool-container {
+  background: white;
+  width: 90%;
+  max-width: 950px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.input-area {
+  flex: 1;
+}
+
+.input-area h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #24355c;
+}
+
+textarea {
+  width: 100%;
+  height: 230px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  resize: none;
+  transition: 0.25s;
+}
+
+textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.count {
+  margin-top: 10px;
+  color: #475569;
+}
+
+/* RIGHT SIDE BUTTONS */
+.format-controls {
+  flex: 0.7;
+}
+
+.format-controls h2 {
+  margin-bottom: 10px;
+  color: #24355c;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #1f63e6;
+  transform: translateY(-2px);
+}
+
+.clear-btn {
+  background: #ef4444;
+}
+
+.clear-btn:hover {
+  background: #c81d1d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tool-container {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
